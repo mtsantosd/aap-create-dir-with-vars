@@ -1,6 +1,6 @@
 ---
 - name: Create content using variables
-  hosts: testing
+  hosts: "{{ target|default('client')}}"
   gather_facts: false
   tasks:
 
