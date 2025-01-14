@@ -1,0 +1,25 @@
+---
+- name: Create content using variables
+  hosts: testing
+  gather_facts: false
+  tasks:
+
+    - ansible.builtin.set_fact:
+        directory: "{{ directory | default('/tmp')}}"
+
+    - ansible.builtin.set_fact:
+        file: "{{ file | default('myfile.txt')}}"
+
+    - ansible.builtin.set_fact:
+        content: "{{ content | default('This is a default message.\n') }}"
+
+    - ansible.builtin.set_fact:
+        fullpath: "{{ [directory, file] | join('/') }}"
+
+    - name: create content on file
+      ansible.builtin.copy:
+        content: "{{ content }}"
+        dest: "{{ fullpath }}"
+
+    - debug:
+        msg: "{{ fullpath }} == {{ content }}"
