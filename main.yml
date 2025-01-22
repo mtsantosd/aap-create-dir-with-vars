@@ -3,7 +3,7 @@
   hosts: all
   become: yes
   tasks:
-    - name: Create {{ directory }} directory.
+    - name: Create the {{ directory }} directory.
       ansible.builtin.file:
         path: "{{ directory }}"
         state: directory
