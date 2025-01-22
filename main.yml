@@ -3,12 +3,12 @@
   hosts: all
   become: yes
   tasks:
-    - name: Create "{{ directory }}" directory.
+    - name: Create {{ directory }} directory.
       ansible.builtin.file:
         path: "{{ directory }}"
         state: directory
 
-    - name: Write content to "{{ file }}" file.
+    - name: Write content to {{ file }} file.
       ansible.builtin.copy:
         dest: "{{ directory }}/{{ file }}"
         content: "{{ content }}"
