@@ -1,4 +1,4 @@
 ---
-content: "This message is only from testing groups.\n"
+content: "This message is only from testing groups."
 directory: /etc/motd.d
 file: motd

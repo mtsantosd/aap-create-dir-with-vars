@@ -11,5 +11,5 @@
     - name: Write content to {{ file }} file.
       ansible.builtin.copy:
         dest: "{{ directory }}/{{ file }}"
-        content: "{{ content }}"
+        content: "{{ content }}\n"
         

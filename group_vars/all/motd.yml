@@ -1,4 +1,4 @@
 ---
-content: 'This is a defaull message for all.\n'
+content: "This is a defaull message for all."
 directory: /tmp
 file: tmp.txt
