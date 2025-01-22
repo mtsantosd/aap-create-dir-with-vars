@@ -1,0 +1,15 @@
+---
+- name: From variables
+  hosts: all
+  become: yes
+  tasks:
+    - name: Define a dir
+      ansible.builtin.file:
+        path: "{{ directory }}"
+        state: directory
+
+    - name: Define content to a file
+      ansible.builtin.copy:
+        dest: "{{ directory }}/{{ file }}"
+        content: "{{ content }}"
+        

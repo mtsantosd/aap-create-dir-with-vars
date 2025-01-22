@@ -1,0 +1,6 @@
+testing:
+  hosts:
+    client:
+development:
+  hosts:
+    servera:
